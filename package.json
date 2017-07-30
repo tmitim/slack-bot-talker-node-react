@@ -1,0 +1,23 @@
+{
+  "name": "slack-bot-talker-node-react",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmitim/slack-bot-talker-node-react.git"
+  },
+  "author": "tmitim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tmitim/slack-bot-talker-node-react/issues"
+  },
+  "homepage": "https://github.com/tmitim/slack-bot-talker-node-react#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
