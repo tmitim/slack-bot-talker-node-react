@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tmitim/slack-bot-talker-node-react#readme",
   "dependencies": {
+    "botkit": "^0.5.6",
     "express": "^4.15.3"
   }
 }
