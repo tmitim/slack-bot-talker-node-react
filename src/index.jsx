@@ -1,10 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import TextField from 'material-ui/TextField';
+// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+
+import RaisedButton from 'material-ui/RaisedButton';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class AppTitle extends React.Component {
   render() {
     return (
-      <div>Bot Talk</div>
+      <AppBar title="Bot Talk" />
     )
   }
 }
@@ -67,10 +77,9 @@ class AppForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.message} onChange={this.handleChange} />
-          <div>
-            <input type="submit" value="Make Me Talk" />
-          </div>
+          <TextField hintText="hello world" value={this.state.message} onChange={this.handleChange} /><br />
+
+          <RaisedButton label="Full width" fullWidth={true} type="submit" label="Make Me Talk" />
         </form>
 
         <span>{this.state.alert}</span>
@@ -92,7 +101,18 @@ class App extends React.Component {
   }
 }
 
+class PrettyApp extends React.Component {
+
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <App />
+      </MuiThemeProvider>
+    )
+  }
+}
+
 ReactDOM.render(
-  <App />,
+  <PrettyApp />,
   document.getElementById("root")
 );
